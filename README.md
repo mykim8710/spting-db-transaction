@@ -14,3 +14,7 @@
     - Package name: com.example.springtx
 - Dependencies: **Spring Web**, **Thymeleaf**, **Lombok**, **Spring Data JPA**, **H2 Database**
 - DB : H2 database
+
+## Content
+- 트랜잭션 적용 확인 : TransactionApplyBasicTest.java
+- 
