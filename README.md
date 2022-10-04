@@ -16,5 +16,6 @@
 - DB : H2 database
 
 ## Content
-- 트랜잭션 적용 확인 : TransactionApplyBasicTest.java
+- 테스트코드를 통한 트랜잭션 적용 확인 : TransactionApplyBasicTest.java
+- 테스트코드를 통한 트랜젝션 위치 확인 : TransactionLevelTest.java
 - 
