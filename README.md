@@ -17,5 +17,7 @@
 
 ## Content
 - 테스트코드를 통한 트랜잭션 적용 확인 : TransactionApplyBasicTest.java
-- 테스트코드를 통한 트랜젝션 위치 확인 : TransactionLevelTest.java
+- 테스트코드를 통한 트랜젝션 적용위치 확인 : TransactionLevelTest.java
+- 테스트코드를 통한 트랜젝션 프록시 내부 호출 확인 : InternalCallV1Test.java, InternalCallV2Test.java
+- 테스트코드를 통한 트랜젝션 초기화 시점 적용확인 : InitTxTest.java
 - 
