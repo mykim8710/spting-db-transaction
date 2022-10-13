@@ -1,6 +1,7 @@
 package com.example.sptingtx.rollback;
 
 import lombok.extern.slf4j.Slf4j;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,18 +12,14 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 @SpringBootTest
 @Slf4j
-public class ExceptionRollbackTest {
+public class MyExceptionRollbackTest {
     @Autowired
     FooService fooService;
 
     @Test
-    void doFoo1() {
-        fooService.fooMethod1();
-    }
-
-    @Test
-    void doFoo2() {
-        fooService.fooMethod2("OK");
+    void doFooServiceMethodTest() {
+        Assertions.assertThatThrownBy(() -> fooService.fooMethod())
+                .isInstanceOf(NullPointerException.class);
     }
 
     @TestConfiguration
@@ -35,7 +32,7 @@ public class ExceptionRollbackTest {
 
     static class FooService {
         @Transactional
-        public void fooMethod1() {
+        public void fooMethod() {
             log.info("do fooMethod1");
             printTxInfo();
 
@@ -50,13 +47,7 @@ public class ExceptionRollbackTest {
         }
 
         private String getString() {
-            int a = 0;
-
-            if(a == 0) {
-                throw new NullPointerException();
-            }
-
-            return "OK";
+            throw new NullPointerException();
         }
 
         private void printTxInfo() {
