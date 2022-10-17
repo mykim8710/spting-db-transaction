@@ -63,3 +63,9 @@
 - 테스트코드를 통한 트랜젝션 프록시 내부 호출 확인 : InternalCallV1Test.java, InternalCallV2Test.java
 - 테스트코드를 통한 트랜젝션 초기화 시점 적용확인 : InitTxTest.java
 - 테스트코드를 통한 예외와 트랜잭션 커밋, 롤백처리 :  OrderServiceTest.java
+- 테스트코드를 통한 스프링 트랜잭션의 전파 : BasicTxTest
+  - 커밋 : commitTest() 
+  - 롤백 : rollbackTest()
+  - 트랜잭션 두 번 커밋-커밋 : doubleCommitTest()
+  - 트랜잭션 두 번 커밋-롤백 : doubleCommitRollbackTest()
+  - 트랜잭션 전파 - 외부 트랜젝션(내부 트랜잭션 커밋) 커밋 : innerCommitTest()
