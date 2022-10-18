@@ -69,3 +69,4 @@
   - 트랜잭션 두 번 커밋-커밋 : doubleCommitTest()
   - 트랜잭션 두 번 커밋-롤백 : doubleCommitRollbackTest()
   - 트랜잭션 전파 - 외부 트랜젝션(내부 트랜잭션 커밋) 커밋 : innerCommitTest()
+  - 트랜잭션 전파 - 외부 트랜젝션(내부 트랜잭션 커밋) 롤백 : outerRollbackTest()
