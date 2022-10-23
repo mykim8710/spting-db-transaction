@@ -62,7 +62,7 @@
 - 테스트코드를 통한 트랜젝션 적용위치 확인 : TransactionLevelTest.java
 - 테스트코드를 통한 트랜젝션 프록시 내부 호출 확인 : InternalCallV1Test.java, InternalCallV2Test.java
 - 테스트코드를 통한 트랜젝션 초기화 시점 적용확인 : InitTxTest.java
-- 테스트코드를 통한 예외와 트랜잭션 커밋, 롤백처리 :  OrderServiceTest.java
+
 - 테스트코드를 통한 스프링 트랜잭션의 전파 : BasicTxTest.java
   - case 1 : 커밋 : commitTest() 
   - case 2 : 롤백 : rollbackTest()
@@ -71,3 +71,13 @@
   - case 5 : 트랜잭션 전파 - 외부 트랜젝션(내부 트랜잭션 커밋) 커밋 : innerCommitTest()
   - case 6 : 트랜잭션 전파 - 외부 트랜젝션(내부 트랜잭션 커밋) 롤백 : outerRollbackTest()
   - case 7 : 트랜잭션 전파 - 외부 트랜젝션(내부 트랜잭션 롤백) 커밋 : innerRollbackTest()
+
+- 예제 1 : 예외와 트랜잭션 커밋, 롤백처리
+  - OrderServiceTest.java
+    - 정상승인에 대한 테스트
+    - Runtime(unchecked) Exception에 대한 테스트
+    - 비지니스(checked) Exception에 대한 테스트
+- 예제 2 : 스프링 트랜잭션의 전파
+  - MemberServiceTest.java
+    - 외부트랜젝션이 없이 성공에 대한 케이스
+    - 
