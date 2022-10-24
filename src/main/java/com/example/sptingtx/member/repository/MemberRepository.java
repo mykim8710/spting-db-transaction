@@ -15,7 +15,7 @@ import java.util.Optional;
 public class MemberRepository {
     private final EntityManager em;
 
-    @Transactional
+    @Transactional // jpa의 모든변경(insert, update, delete)는 트랜젝션안에서 이루어져야한다.
     public void save(Member member) {
         log.info("member 저장");
         em.persist(member);

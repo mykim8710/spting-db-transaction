@@ -79,5 +79,10 @@
     - 비지니스(checked) Exception에 대한 테스트
 - 예제 2 : 스프링 트랜잭션의 전파
   - MemberServiceTest.java
-    - 외부트랜젝션이 없이 성공에 대한 케이스
-    - 
+    - 외부트랜젝션이 없이 성공에 대한 케이스 : outerTxOffSuccessTest()
+    - 외부트랜잭션이 없이 실패에 대한 케이스 : outerTxOffFailTest()
+    - 서비스 계층에서 트랜잭션을 사용한 케이스 : singleTxTest()
+    - 모든 계층에서 트랜잭션을 사용하여 성공한 케이스 : outerTxOnSuccessTest()
+    - 모든 계층에서 트랜잭션을 사용하여 실패한 케이스 : outerTxOnFailTest()
+    - 모든 계층에서 트랜잭션을 사용하여 실패(Service에서 Exception을 잡음)한 케이스 : recoverExceptionFailTest()
+    - 모든 계층에서 트랜잭션을 사용, 트랜잭션 분리(REQUIRES_NEW) : recoverExceptionSuccessTest()

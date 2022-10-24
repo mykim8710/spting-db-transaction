@@ -4,6 +4,7 @@ import com.example.sptingtx.member.domain.Log;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -15,9 +16,9 @@ import java.util.Optional;
 public class LogRepository {
     private final EntityManager em;
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRES_NEW) // jpa의 모든변경(insert, update, delete)는 트랜젝션안에서 이루어져야한다.
     public void save(Log logMessage) {
-        log.info("log 저징");
+        log.info("log 저장");
         em.persist(logMessage);
 
         if(logMessage.getMessage().contains("로그예외")) {

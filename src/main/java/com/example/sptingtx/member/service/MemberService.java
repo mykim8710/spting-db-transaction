@@ -7,6 +7,7 @@ import com.example.sptingtx.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service
@@ -15,7 +16,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final LogRepository logRepository;
 
-
+    @Transactional
     public void joinV1(String username) {
         Member member = new Member(username);
         Log logMessage = new Log(username);
@@ -29,7 +30,7 @@ public class MemberService {
         log.info("== logRepository 호출 종료 ==");
     }
 
-
+    @Transactional
     public void joinV2(String username) {
         Member member = new Member(username);
         Log logMessage = new Log(username);
@@ -42,7 +43,7 @@ public class MemberService {
 
         try {
             logRepository.save(logMessage); // transaction
-        }catch (RuntimeException e) {
+        } catch (RuntimeException e) {
             log.info("log 저장에 실했습니다. logMessage={}", logMessage.getMessage());
             log.info("정상흐름 반환");
         }

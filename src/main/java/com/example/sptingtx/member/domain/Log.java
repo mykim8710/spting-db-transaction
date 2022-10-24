@@ -16,6 +16,7 @@ public class Log {
     private Long id;
     private String message;
 
+    // jpa는 기본생성자가 필요
     public Log() {
     }
 

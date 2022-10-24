@@ -1,4 +1,4 @@
-package com.example.sptingtx.order;
+package com.example.sptingtx.order.service;
 
 import com.example.sptingtx.order.domain.Order;
 import com.example.sptingtx.order.enums.OrderPayStatusType;
